@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+select {
+  background-color: rgba(0, 0, 0, 0.8); 
+  color: white;
+}
+
+select option {
+  background-color: rgba(73, 72, 72, 0.8); /* Dropdown menu background */
+  color: white;
+}
+
+select option:hover {
+  background-color: rgba(255, 255, 255, 0.2); 
+}
