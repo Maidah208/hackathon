@@ -127,7 +127,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link href="/blog" onClick={() => setIsSideMenuOpen(false)} className="hover:text-blue-500 transition">
+              <Link href="#" onClick={() => setIsSideMenuOpen(false)} className="hover:text-blue-500 transition">
                 Blog
               </Link>
             </li>
