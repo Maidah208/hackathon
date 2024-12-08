@@ -133,9 +133,9 @@ const ContactSection = () => {
 
       <div className="flex flex-col items-center justify-center space-y-4 pt-20">
         <p className="text-lg font-medium text-gray-600">
-          We Can't Wait To Meet You
+          We Can&apos;t Wait To Meet You
         </p>
-        <h1 className="text-4xl font-bold text-gray-800">Let's Talk</h1>
+        <h1 className="text-4xl font-bold text-gray-800">Let&apos;s Talk</h1>
         <button className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition duration-300">
           Try It Now
         </button>

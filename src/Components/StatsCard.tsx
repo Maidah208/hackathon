@@ -1,8 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 interface StatsCardProps {
-  icon: any; // FontAwesome icon passed as a prop
+  icon: IconDefinition; // FontAwesome icon passed as a prop
   count: string; // The count number (e.g., "10.5k")
   text: string; // The description text (e.g., "Sellers active on our site")
   outerCircleColor?: string; // Color for the outer circle (default: gray)
