@@ -10,7 +10,7 @@ const ClassicProduct = () => {
         <h2 className="font-bold text-4xl sm:text-5xl lg:text-6xl">Vita Classic Product</h2>
         <p className="text-lg leading-relaxed">
           We know how large objects will act, <br />
-          We know how are objects will act, We know
+          We know how objects will act, We know
         </p>
         <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
           <span className="text-2xl font-semibold">$16.48</span>

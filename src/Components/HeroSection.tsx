@@ -5,17 +5,18 @@ function Hero() {
   return (
     <div className="w-full relative h-[400px] sm:h-[500px] lg:h-[600px]">
       {/* Background Image */}
-      <Image
-        src="/images/heroImage.jpg"
-        alt="Hero Image"
-        layout="fill"
-        objectFit="cover"
-        className="z-0"
-        priority
-      />
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/heroImage.jpg"
+          alt="Hero Image"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
 
       {/* Overlay Content */}
-      <div className="absolute inset-0 flex flex-col justify-center items-start text-white px-6 sm:px-12 lg:px-36">
+      <div className="absolute inset-0 flex flex-col justify-center items-start text-white px-6 sm:px-12 lg:px-36 z-10">
         <p className="uppercase font-semibold tracking-wide text-sm sm:text-base md:text-lg">
           Summer 2020
         </p>

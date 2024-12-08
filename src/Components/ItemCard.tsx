@@ -21,15 +21,16 @@ const ItemCard: React.FC<ItemCardProps> = ({
 }) => {
   return (
     <div className="relative w-[250px] h-[450px] bg-white shadow-md transition-shadow group">
-
       {/* Image Section */}
       <div className="relative w-full h-[80%]">
         <Link href={`/products/${productId}`}>
           <Image
             src={imageSrc}
             alt={title}
-            layout="fill"
-            objectFit="cover"
+            width={300} // Fixed width
+            height={200} // Fixed height
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            style={{ objectFit: "cover" }}
             className="cursor-pointer"
           />
         </Link>
@@ -39,7 +40,7 @@ const ItemCard: React.FC<ItemCardProps> = ({
       <div className="absolute bottom-0 left-0 right-0 bg-white p-4 text-center">
         {/* Title */}
         <p className="font-semibold text-lg text-gray-800">{title}</p>
-        
+
         {/* Description */}
         <p className="text-sm text-gray-500 mt-2">{text}</p>
 

@@ -24,7 +24,7 @@ const Navbar = () => {
           <div className="text-2xl font-bold">Bandage</div>
 
           {/* Navigation Links */}
-          <ul className="lg:flex items-center space-x-8 text-gray-700 font-medium hidden lg:block">
+          <ul className="lg:flex items-center space-x-8 text-gray-700 font-medium hidden sm:block">
             <li>
               <Link href="/" className="hover:text-blue-500 transition">
                 Home

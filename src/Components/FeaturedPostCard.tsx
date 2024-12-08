@@ -24,9 +24,10 @@ const FeaturedPostCard: React.FC<FeaturedPostCardProps> = ({
         <Image
           src={imageSrc}
           alt={title}
-          layout="fill"
-          objectFit="cover"
-          className="w-full h-full"
+          width={300} // Fixed width
+          height={200} // Fixed height
+          className="object-cover"
+          priority
         />
       </div>
 
@@ -45,7 +46,10 @@ const FeaturedPostCard: React.FC<FeaturedPostCardProps> = ({
         </div>
 
         {/* Learn More Link */}
-        <Link href="#" className="text-blue-600 text-sm font-semibold mt-2 inline-block">
+        <Link
+          href="#"
+          className="text-blue-600 text-sm font-semibold mt-2 inline-block"
+        >
           Learn More
         </Link>
       </div>
