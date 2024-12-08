@@ -38,13 +38,13 @@ const Navbar = () => {
               {/* Dropdown */}
               <ul className="absolute hidden group-hover:block bg-white border border-gray-200 rounded-md mt-2 shadow-lg py-2">
                 <li className="px-4 py-2 hover:bg-gray-100">
-                  <Link href="/shop/men">Men</Link>
+                  <Link href="#">Men</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-100">
-                  <Link href="/shop/women">Women</Link>
+                  <Link href="#">Women</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-100">
-                  <Link href="/shop/kids">Kids</Link>
+                  <Link href="#">Kids</Link>
                 </li>
               </ul>
             </li>
@@ -54,7 +54,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link href="/blog" className="hover:text-blue-500 transition">
+              <Link href="#" className="hover:text-blue-500 transition">
                 Blog
               </Link>
             </li>
