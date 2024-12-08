@@ -1,19 +1,36 @@
 import React from "react";
-import '../app/globals.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faTwitter, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import "../app/globals.css";
+
 const Header = () => {
   return (
-    <div className="bg-black text-white flex items-center justify-between h-12 px-4 py-2">
-      {/* Left-aligned text */}
-      <div className="flex items-center gap-4 mx-auto">
-        <p>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
-        <p className="font-semibold border-b-2 border-gray-500">Shop Now</p>
+    <div className="bg-[#252B42] text-white flex flex-col md:flex-row items-center justify-between h-auto md:h-12 px-6 py-4 md:px-6 md:py-2">
+      {/* Left Side: Contact Info */}
+      <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
+        <div className="flex items-center gap-2 text-sm md:text-base">
+          <FontAwesomeIcon icon={faPhone} className="text-lg md:text-xl" />
+          <p>(225) 555-0118</p>
+        </div>
+        <div className="flex items-center gap-2 text-sm md:text-base">
+          <FontAwesomeIcon icon={faEnvelope} className="text-lg md:text-xl" />
+          <p>michelle.rivera@example.com</p>
+        </div>
       </div>
-      {/* Right-aligned dropdown */}
-      <select name="language" className="bg-ransparent px-2 py-1 mr-16">
-        <option value="ENGLISH">ENGLISH</option>
-        <option value="URDU">URDU</option>
-        <option value="FRENCH">FRENCH</option>
-      </select>
+
+      {/* Center Text */}
+      <div className="text-center md:text-left mt-4 md:mt-0">
+        <p className="text-sm md:text-base">Follow Us and get a chance to win 80% off-</p>
+      </div>
+
+      {/* Right Side: Social Links */}
+      <div className="flex items-center gap-4 mt-4 md:mt-0">
+        <FontAwesomeIcon icon={faFacebook} className="text-xl md:text-2xl" />
+        <FontAwesomeIcon icon={faTwitter} className="text-xl md:text-2xl" />
+        <FontAwesomeIcon icon={faInstagram} className="text-xl md:text-2xl" />
+        <FontAwesomeIcon icon={faYoutube} className="text-xl md:text-2xl" />
+      </div>
     </div>
   );
 };

@@ -1,53 +1,40 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { faApple } from '@fortawesome/free-brands-svg-icons';
+import Image from "next/image";
+import Link from "next/link";
 
-import Image from "next/image"
-import Link from 'next/link';
-function Herro(){
-    return(
-        <div className="w-full flex justify-center items-center">
-            <div className="sm:w-full md:w-full lg:w-[80%] flex ">
-                {/* left side */}
-                <div className='border-r-2 border-neutral-100 p-10 sm:hidden md:block  pb-0  '>
-                    <ul>
-                        <li className='leading-loose hover:underline cursor-pointer'>Woman&apos;s Fashion  <FontAwesomeIcon icon={faChevronRight} className='text-xs ml-2'></FontAwesomeIcon></li>
-                        <li className='leading-loose hover:underline cursor-pointer'>Men&apos;s Fashion  <FontAwesomeIcon icon={faChevronRight} className='text-xs ml-8'></FontAwesomeIcon></li>
-                        <li className='leading-loose hover:underline cursor-pointer'>Electronics</li>
-                        <li className='leading-loose hover:underline cursor-pointer'>Home & Lifestyle</li>
-                        <li className='leading-loose hover:underline cursor-pointer'>Medicine</li>
-                        <li className='leading-loose hover:underline cursor-pointer'>Sports & Outdoor</li>
-                        <li className='leading-loose hover:underline cursor-pointer'>Baby&apos;s & Toys</li>
-                        <li className='leading-loose hover:underline cursor-pointer'>Groceries & Pets</li>
-                        <li className='leading-loose hover:underline cursor-pointer'>Health & Beauty</li>
-                        
-                    </ul>
-                </div>
-                {/* right side */}
-                <div className='sm:w-full md:w-[650px] lg:w-[770px] sm:ml-0 md:ml-0 lg:ml-3 sm:mt-0 md:mt-10 sm:h-[250] md:h-[280px] bg-black flex justify-between pt-6 '>
-                     {/* left side */}
-                     <div className='text-white sm:w-[140px] md:w-[200px] pt-4 ml-5'>
-                          {/* icon div */}
-                          <div className='flex gap-x-2 items-center'>
-                            <span> <FontAwesomeIcon icon={faApple} className="text-white sm:text-2xl md:text-4xl" /> </span>
-                            <span className='sm:text-[10px] md:text-xs'>iPhone 14 Series</span>
-                          </div>
-                          <h1 className='sm:text-md md:text-4xl font-bold my-5'>Up to 10% off Voucher</h1>
-                         <Link href={"#products"} className=' underline underline-offset-4 hover:font-bold'>Shop Now-&gt;</Link>
-                          {/* <button className=' underline underline-offset-8 hover:font-bold'>Shop Now-&gt;</button> */}
-                     </div>
+function Hero() {
+  return (
+    <div className="w-full relative h-[400px] sm:h-[500px] lg:h-[600px]">
+      {/* Background Image */}
+      <Image
+        src="/images/heroImage.jpg"
+        alt="Hero Image"
+        layout="fill"
+        objectFit="cover"
+        className="z-0"
+        priority
+      />
 
-                     {/* right side */}
-                     <div>
-                        <Image src={"/images/phone.png"}
-                        width={350}
-                        height={200}
-                        alt='hero iamges'></Image>
-                     </div>
-                 </div>
-            </div>
-        </div>
-    )
+      {/* Overlay Content */}
+      <div className="absolute inset-0 flex flex-col justify-center items-start text-white px-6 sm:px-12 lg:px-36">
+        <p className="uppercase font-semibold tracking-wide text-sm sm:text-base md:text-lg">
+          Summer 2020
+        </p>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold my-4 sm:my-5 lg:my-7">
+          NEW COLLECTION
+        </h1>
+        <p className="text-lg sm:text-xl mb-4 sm:mb-5 leading-relaxed">
+          We know how large objects will act, <br />
+          but things on a small scale.
+        </p>
+        <Link
+          href="#"
+          className="bg-[#2DC071] text-white px-6 py-3 rounded-lg text-sm sm:text-base font-semibold uppercase tracking-wide hover:bg-green-700 transition"
+        >
+          Shop Now
+        </Link>
+      </div>
+    </div>
+  );
 }
-export default Herro
+
+export default Hero;

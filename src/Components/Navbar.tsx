@@ -1,73 +1,144 @@
-import React from "react";
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faUser,
   faMagnifyingGlass,
   faHeart,
   faShoppingCart,
-  faUser,
+  faChevronDown,
+  faBars,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false); // State for side menu
+
   return (
     <>
-      <nav className="flex items-center justify-between px-20 h-16 border-b-2 border-gray-500">
-        <div className="text-2xl font-bold mt-4">Exclusive</div>
-        {/* Links Section */}
-        <div className="flex space-x-8 font-medium mt-4">
-          <Link href="/" className="hover:text-gray-400">
-            Home
-          </Link>
-          <Link href="/contact" className="hover:text-gray-400">
-            Contact
-          </Link>
-          <Link href="/about" className="hover:text-gray-400">
-            About
-          </Link>
-          <Link href="/signup" className="hover:text-gray-400">
-            Sign Up
-          </Link>
+      <nav className="flex items-center justify-between px-5 lg:px-20 h-16 border-b-2 border-gray-500">
+        {/* Left Section: Logo and Navigation Links */}
+        <div className="flex items-center gap-12">
+          {/* Logo */}
+          <div className="text-2xl font-bold">Bandage</div>
+
+          {/* Navigation Links */}
+          <ul className="lg:flex items-center space-x-8 text-gray-700 font-medium hidden lg:block">
+            <li>
+              <Link href="/" className="hover:text-blue-500 transition">
+                Home
+              </Link>
+            </li>
+            <li className="relative group">
+              <Link href="/shop" className="hover:text-blue-500 transition flex items-center gap-1">
+                Shop
+                <FontAwesomeIcon icon={faChevronDown} className="text-sm" />
+              </Link>
+              {/* Dropdown */}
+              <ul className="absolute hidden group-hover:block bg-white border border-gray-200 rounded-md mt-2 shadow-lg py-2">
+                <li className="px-4 py-2 hover:bg-gray-100">
+                  <Link href="/shop/men">Men</Link>
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-100">
+                  <Link href="/shop/women">Women</Link>
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-100">
+                  <Link href="/shop/kids">Kids</Link>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <Link href="/about" className="hover:text-blue-500 transition">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="hover:text-blue-500 transition">
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-blue-500 transition">
+                Contact
+              </Link>
+            </li>
+          </ul>
         </div>
-        <div className="flex items-center space-x-6 mt-1">
-          {/* Search Bar Section */}
-          <div className="flex items-center space-x-3 rounded-md border border-gray-200 bg-gray-100 p-2">
-            <input
-              type="text"
-              placeholder="What are you looking for?"
-              className="text-sm px-3 w-[243px] outline-none bg-transparent"
-            />
-            <FontAwesomeIcon
-              icon={faMagnifyingGlass}
-              className="text-gray-500"
-            />
-          </div>
-          {/* Heart Icon and Notification Badge */}
+
+        {/* Right Section: User Icons */}
+        <div className="flex items-center space-x-6">
+          {/* Login/Register */}
+          <Link href="/signup" className="flex items-center gap-2 hover:text-blue-500 transition">
+            <FontAwesomeIcon icon={faUser} className="text-xl" />
+            <span>Login / Register</span>
+          </Link>
+
+          {/* Search */}
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass}
+            className="text-xl text-gray-700 cursor-pointer hover:text-blue-500 transition"
+          />
+
+          {/* Wishlist */}
           <Link href="/wishlist">
-            <div className="relative">
-              <FontAwesomeIcon icon={faHeart} className="text-2xl" />
-              {/* Notification Badge */}
-              <div className="absolute top-0 right-[-4px] text-xs text-white bg-red-700 rounded-full w-[14px] h-[14px] flex items-center justify-center">
-                5
-              </div>
-            </div>
+            <FontAwesomeIcon
+              icon={faHeart}
+              className="text-xl text-gray-700 cursor-pointer hover:text-red-500 transition"
+            />
           </Link>
-          {/* Cart Icon & Notification Badge */}
+
+          {/* Cart */}
           <Link href="/cart">
-            <div className="relative">
-              <FontAwesomeIcon icon={faShoppingCart} className="text-2xl" />
-              {/* Notification Badge */}
-              <div className="absolute top-0 right-[-4px] text-xs text-white bg-red-700 rounded-full w-[14px] h-[14px] flex items-center justify-center">
-                3
-              </div>
-            </div>
+            <FontAwesomeIcon
+              icon={faShoppingCart}
+              className="text-xl text-gray-700 cursor-pointer hover:text-blue-500 transition"
+            />
           </Link>
-          <Link href="/account">
-            <div>
-              <FontAwesomeIcon icon={faUser} className="text-2xl" />
-            </div>
-          </Link>
+
+          {/* Mobile Hamburger Icon */}
+          <div className="lg:hidden cursor-pointer" onClick={() => setIsSideMenuOpen(!isSideMenuOpen)}>
+            <FontAwesomeIcon icon={isSideMenuOpen ? faTimes : faBars} className="text-xl" />
+          </div>
         </div>
       </nav>
+
+      {/* Side Menu for mobile screens */}
+      <div
+        className={`fixed top-0 left-0 w-64 h-full bg-white border-r-2 border-gray-500 z-50 transform ${
+          isSideMenuOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 ease-in-out lg:hidden`}
+      >
+        <div className="p-6">
+          <ul className="space-y-4 text-gray-700 font-medium">
+            <li>
+              <Link href="/" onClick={() => setIsSideMenuOpen(false)} className="hover:text-blue-500 transition">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/shop" onClick={() => setIsSideMenuOpen(false)} className="hover:text-blue-500 transition">
+                Shop
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" onClick={() => setIsSideMenuOpen(false)} className="hover:text-blue-500 transition">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" onClick={() => setIsSideMenuOpen(false)} className="hover:text-blue-500 transition">
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" onClick={() => setIsSideMenuOpen(false)} className="hover:text-blue-500 transition">
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </>
   );
 };

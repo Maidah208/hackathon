@@ -1,9 +1,10 @@
-import React from 'react'
-
+import Whishlist from "@/Components/Whishlist";
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      <Whishlist />
+    </div>
+  );
+};
 
-export default page
+export default page;

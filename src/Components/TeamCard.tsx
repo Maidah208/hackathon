@@ -28,18 +28,18 @@ const TeamCard: React.FC<TeamCardProps> = ({ imageSrc, name, designation }) => {
       </div>
 
       {/* Name and Designation */}
-      <div className="mt-3 w-full">
+      <div className="mt-3 w-full text-center">
         <p className="font-bold text-lg">{name}</p>
         <p className="font-thin text-sm">{designation}</p>
       </div>
 
       {/* Social Icons */}
-      <div className="space-x-3 mt-3">
-        <FontAwesomeIcon icon={faTwitter} className="h-6 w-6" />
+      <div className="space-x-3 mt-3 text-center">
+        <FontAwesomeIcon icon={faTwitter} className="h-6 w-6 text-2xl text-[#23A6F0]" />
 
-        <FontAwesomeIcon icon={faInstagram} className="h-6 w-6" />
+        <FontAwesomeIcon icon={faInstagram} className="h-6 w-6 text-2xl text-[#23A6F0]" />
 
-        <FontAwesomeIcon icon={faLinkedin} className="h-6 w-6" />
+        <FontAwesomeIcon icon={faLinkedin} className="h-6 w-6 text-2xl text-[#23A6F0]" />
       </div>
     </div>
   );

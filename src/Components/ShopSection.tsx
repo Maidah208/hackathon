@@ -13,7 +13,7 @@ const BestSelling = () => {
       </div>
 
       {/* Cards Section - Responsive grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-8 justify-items-center sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 my-8 justify-items-center sm:grid-cols-2 lg:grid-cols-4">
         <ItemCard />
         <ItemCard
           imageSrc="/images/featured (2).jpeg"
@@ -34,7 +34,7 @@ const BestSelling = () => {
           originalPrice={400}
         />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-8 justify-items-center sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 my-8 justify-items-center sm:grid-cols-2 lg:grid-cols-4">
         <ItemCard />
         <ItemCard
           imageSrc="/images/featured (2).jpeg"

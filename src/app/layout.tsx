@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
+import Header from "@/Components/Header";
 import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
-import Header from "@/Components/Header";
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 

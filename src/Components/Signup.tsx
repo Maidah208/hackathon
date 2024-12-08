@@ -43,7 +43,7 @@ function Signup() {
             />
             <button
               type="submit"
-              className="py-2 px-4 w-full mt-5 bg-red-600 hover:bg-red-700 text-white rounded-sm transition-all ease-in-out duration-300"
+              className="py-2 px-4 w-full mt-5 bg-blue-600 text-white rounded-sm transition-all ease-in-out duration-300"
             >
               Create Account
             </button>
@@ -62,7 +62,7 @@ function Signup() {
           </div>
           <div className="flex pt-8 items-center justify-center gap-2">
             <p className="text-black opacity-85">Already have account?</p>
-            <Link href="/signup/login"><span className="border-b border-zinc-500 cursor-pointer">Log in</span></Link>
+            <Link href="/signup/login"><span className="border-b border-zinc-500 text-blue-600 cursor-pointer">Log in</span></Link>
           </div>
         </div>
       </div>
