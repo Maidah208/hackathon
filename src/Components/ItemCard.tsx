@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 interface ItemCardProps {
@@ -20,43 +19,28 @@ const ItemCard: React.FC<ItemCardProps> = ({
   productId = "12345",
 }) => {
   return (
-    <div className="relative w-[250px] h-[450px] bg-white shadow-md transition-shadow group">
+    <div className="item-card">
       {/* Image Section */}
-      <div className="relative w-full h-[80%]">
+      <div className="image-container">
         <Link href={`/products/${productId}`}>
-          <Image
-            src={imageSrc}
-            alt={title}
-            width={300} // Fixed width
-            height={200} // Fixed height
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            style={{ objectFit: "cover" }}
-            className="cursor-pointer"
-          />
+          <img src={imageSrc} alt={title} className="item-image" />
         </Link>
       </div>
 
       {/* Content Section Below Image */}
-      <div className="absolute bottom-0 left-0 right-0 bg-white p-4 text-center">
-        {/* Title */}
-        <p className="font-semibold text-lg text-gray-800">{title}</p>
-
-        {/* Description */}
-        <p className="text-sm text-gray-500 mt-2">{text}</p>
-
-        {/* Price Section */}
-        <div className="flex justify-center items-center mt-3 space-x-3">
-          <p className="text-lg font-bold text-gray-400">${originalPrice}</p>
-          <p className="text-lg font-bold text-green-600">${price}</p>
+      <div className="item-content">
+        <p className="item-title">{title}</p>
+        <p className="item-text">{text}</p>
+        <div className="item-prices">
+          <span className="original-price">${originalPrice}</span>
+          <span className="discounted-price">${price}</span>
         </div>
-
-        {/* Circles Section */}
-        <div className="flex justify-center gap-2 mt-4">
-          <div className="w-4 h-4 rounded-full bg-red-500"></div>
-          <div className="w-4 h-4 rounded-full bg-blue-500"></div>
-          <div className="w-4 h-4 rounded-full bg-yellow-500"></div>
-          <div className="w-4 h-4 rounded-full bg-purple-500"></div>
-          <div className="w-4 h-4 rounded-full bg-green-500"></div>
+        <div className="color-circles">
+          <div className="circle red"></div>
+          <div className="circle blue"></div>
+          <div className="circle yellow"></div>
+          <div className="circle purple"></div>
+          <div className="circle green"></div>
         </div>
       </div>
     </div>
