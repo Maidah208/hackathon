@@ -10,9 +10,10 @@ const Universe = () => {
             <Image
               src="/images/univers.png"
               alt="Universe Image"
-              height={500}
-              width={500}
               className="w-full max-w-[500px] lg:w-[400px] lg:h-[400px] object-cover object-center"
+              width={400} // Adjusted for consistency
+              height={400} // Adjusted for consistency
+              style={{ width: "auto", height: "auto" }} // Ensures aspect ratio is maintained
             />
           </div>
         </div>
