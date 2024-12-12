@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTwitter,
@@ -18,10 +17,8 @@ const TeamCard: React.FC<TeamCardProps> = ({ imageSrc, name, designation }) => {
     <div className="md:w-[250px] md:h-[390px] sm:h-[300px]">
       {/* Image */}
       <div className="w-full">
-        <Image
+        <img
           src={imageSrc}
-          width={200}
-          height={200}
           alt={name}
           className="w-full h-auto object-cover"
         />
