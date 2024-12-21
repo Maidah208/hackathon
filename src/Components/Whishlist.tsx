@@ -19,7 +19,7 @@ const Whishlist = () => {
       </div>
 
       {/* cards */}
-      <div className="flex flex-wrap gap-6 items-center justify-center sm:justify-start my-8">
+      <div className="flex flex-wrap gap-6 items-center justify-center my-8">
         <ItemCard />
         <ItemCard
           imageSrc="/images/featured (2).jpeg"
@@ -39,6 +39,7 @@ const Whishlist = () => {
           price={370}
           originalPrice={400}
         />
+        
       </div>
     </div>
   );

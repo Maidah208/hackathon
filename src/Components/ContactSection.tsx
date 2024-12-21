@@ -16,7 +16,7 @@ const ContactSection = () => {
     <div>
       <div className="flex flex-col lg:flex-row gap-16 lg:gap-28 my-10 justify-center mx-8 text-black">
         {/* Contact Details */}
-        <div className="space-y-4 py-28 lg:py-0 text-center lg:text-left">
+        <div className="space-y-4 py-28 lg:py-20 text-center lg:text-left">
           <p className="font-medium uppercase tracking-wide">Contact Us</p>
           <h1 className="text-4xl font-bold">Get in touch today!</h1>
           <p className="text-gray-500">

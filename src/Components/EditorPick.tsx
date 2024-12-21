@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const EditorPick = () => {
   return (
-    <div className="my-24 mx-44 text-center flex flex-col items-center justify-center">
+    <div className="my-24 lg:mx-44 md:mx-25 sm:mx-19 text-center flex flex-col items-center justify-center">
       {/* Heading */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold">EDITOR’S PICK</h1>
@@ -13,7 +13,7 @@ const EditorPick = () => {
       </div>
 
       {/* Image Layout */}
-      <div className="flex flex-col md:flex-row gap-5">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-5">
         {/* First Image */}
         <div className="relative">
           <Image

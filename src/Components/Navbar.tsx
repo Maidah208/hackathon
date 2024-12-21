@@ -31,7 +31,10 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="relative group">
-              <Link href="/shop" className="hover:text-blue-500 transition flex items-center gap-1">
+              <Link
+                href="/shop"
+                className="hover:text-blue-500 transition flex items-center gap-1"
+              >
                 Shop
                 <FontAwesomeIcon icon={faChevronDown} className="text-sm" />
               </Link>
@@ -67,9 +70,12 @@ const Navbar = () => {
         </div>
 
         {/* Right Section: User Icons */}
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-6 lg:space-x-6">
           {/* Login/Register */}
-          <Link href="/signup" className="flex items-center gap-2 hover:text-blue-500 transition">
+          <Link
+            href="/signup"
+            className="hidden lg:flex items-center gap-2 hover:text-blue-500 transition"
+          >
             <FontAwesomeIcon icon={faUser} className="text-xl" />
             <span>Login / Register</span>
           </Link>
@@ -77,11 +83,11 @@ const Navbar = () => {
           {/* Search */}
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
-            className="text-xl text-gray-700 cursor-pointer hover:text-blue-500 transition"
+            className="hidden lg:block text-xl text-gray-700 cursor-pointer hover:text-blue-500 transition"
           />
 
           {/* Wishlist */}
-          <Link href="/wishlist">
+          <Link href="/wishlist" className="hidden lg:block">
             <FontAwesomeIcon
               icon={faHeart}
               className="text-xl text-gray-700 cursor-pointer hover:text-red-500 transition"
@@ -89,7 +95,7 @@ const Navbar = () => {
           </Link>
 
           {/* Cart */}
-          <Link href="/cart">
+          <Link href="/cart" className="hidden lg:block">
             <FontAwesomeIcon
               icon={faShoppingCart}
               className="text-xl text-gray-700 cursor-pointer hover:text-blue-500 transition"
@@ -97,8 +103,14 @@ const Navbar = () => {
           </Link>
 
           {/* Mobile Hamburger Icon */}
-          <div className="lg:hidden cursor-pointer" onClick={() => setIsSideMenuOpen(!isSideMenuOpen)}>
-            <FontAwesomeIcon icon={isSideMenuOpen ? faTimes : faBars} className="text-xl" />
+          <div
+            className="lg:hidden cursor-pointer"
+            onClick={() => setIsSideMenuOpen(!isSideMenuOpen)}
+          >
+            <FontAwesomeIcon
+              icon={isSideMenuOpen ? faTimes : faBars}
+              className="text-xl"
+            />
           </div>
         </div>
       </nav>
@@ -109,34 +121,80 @@ const Navbar = () => {
           isSideMenuOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out lg:hidden`}
       >
-        <div className="p-6">
+        <div className="p-6 space-y-6">
           <ul className="space-y-4 text-gray-700 font-medium">
             <li>
-              <Link href="/" onClick={() => setIsSideMenuOpen(false)} className="hover:text-blue-500 transition">
+              <Link
+                href="/"
+                onClick={() => setIsSideMenuOpen(false)}
+                className="hover:text-blue-500 transition"
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/shop" onClick={() => setIsSideMenuOpen(false)} className="hover:text-blue-500 transition">
+              <Link
+                href="/shop"
+                onClick={() => setIsSideMenuOpen(false)}
+                className="hover:text-blue-500 transition"
+              >
                 Shop
               </Link>
             </li>
             <li>
-              <Link href="/about" onClick={() => setIsSideMenuOpen(false)} className="hover:text-blue-500 transition">
+              <Link
+                href="/about"
+                onClick={() => setIsSideMenuOpen(false)}
+                className="hover:text-blue-500 transition"
+              >
                 About
               </Link>
             </li>
             <li>
-              <Link href="#" onClick={() => setIsSideMenuOpen(false)} className="hover:text-blue-500 transition">
+              <Link
+                href="#"
+                onClick={() => setIsSideMenuOpen(false)}
+                className="hover:text-blue-500 transition"
+              >
                 Blog
               </Link>
             </li>
             <li>
-              <Link href="/contact" onClick={() => setIsSideMenuOpen(false)} className="hover:text-blue-500 transition">
+              <Link
+                href="/contact"
+                onClick={() => setIsSideMenuOpen(false)}
+                className="hover:text-blue-500 transition"
+              >
                 Contact
               </Link>
             </li>
           </ul>
+
+          {/* Text for mobile instead of icons */}
+          <div className="flex flex-col space-y-6 text-gray-700 text-lg font-medium">
+            <Link
+              href="/signup"
+              onClick={() => setIsSideMenuOpen(false)}
+              className="hover:text-blue-500 transition"
+            >
+              Login / Register
+            </Link>
+            <Link
+              href="/wishlist"
+              onClick={() => setIsSideMenuOpen(false)}
+              className="hover:text-blue-500 transition"
+            >
+              Wishlist
+            </Link>
+            <Link
+              href="/cart"
+              onClick={() => setIsSideMenuOpen(false)}
+              className="hover:text-blue-500 transition"
+            >
+              Cart
+            </Link>
+            
+          </div>
         </div>
       </div>
     </>
